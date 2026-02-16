@@ -69,7 +69,7 @@ const Nav = () => {
         {/* YOUR LOGO - cream version for dark bg */}
         <div onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} style={{ cursor: "pointer" }}>
           <Image
-            src="/logo-cream.png"
+            src="/logo-cream.png.webp"
             alt="XC"
             width={44}
             height={33}
@@ -631,7 +631,7 @@ const Footer = () => (
       display: "flex", justifyContent: "space-between", alignItems: "center",
       flexWrap: "wrap", gap: 16,
     }}>
-      <Image src="/logo-cream.png" alt="XC" width={32} height={24} style={{ objectFit: "contain" }} />
+      <Image src="/logo-cream.png.webp" alt="XC" width={32} height={24} style={{ objectFit: "contain" }} />
       <span style={{ color: CREAM_DIM, fontSize: 13, fontFamily: "'DM Sans', sans-serif" }}>
         © 2025 Xander Cayetano. All rights reserved.
       </span>
