@@ -15,7 +15,34 @@ body {
   color: #EDE8D0;
   font-family: 'DM Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* Subtle noise grain texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* Atmospheric radial glows */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(237,232,208,0.025) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 50% 100%, rgba(237,232,208,0.015) 0%, transparent 50%);
 }
 
 ::selection {
@@ -27,13 +54,59 @@ input, textarea {
   box-sizing: border-box;
 }
 
+input::placeholder, textarea::placeholder {
+  color: #5A5750;
+  opacity: 1;
+}
+
+:focus-visible {
+  outline: 2px solid #EDE8D0;
+  outline-offset: 2px;
+}
+
+button:focus-visible {
+  outline: 2px solid #EDE8D0;
+  outline-offset: 2px;
+}
+
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
+/* Desktop nav links */
+@media (min-width: 769px) {
+  .nav-desktop-links {
+    display: flex !important;
+  }
+  .nav-hamburger {
+    display: none !important;
+  }
+  .section-indicator {
+    display: flex !important;
+  }
+}
+
 @media (max-width: 768px) {
   .grid-responsive {
     grid-template-columns: 1fr !important;
+  }
+  .nav-desktop-links {
+    display: none !important;
+  }
+  .nav-hamburger {
+    display: flex !important;
+  }
+  .hero-cta-group {
+    gap: 10px !important;
+  }
+  .hero-cta-group button {
+    padding: 16px 36px !important;
+  }
+  .footer-inner {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+    gap: 20px !important;
   }
 }
