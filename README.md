@@ -13,7 +13,8 @@ Open [http://localhost:3000](http://localhost:3000)
 
 Replace the logo file in `/public/`:
 
-- **`logo-cream.png`** — Your cream XC logo (used on nav + footer against dark background)
+- **`logo-mark-black.png` / `logo-mark-cream.png`** — Trimmed XC mark (nav + footer use the black one)
+- **`src/app/icon.png`, `apple-icon.png`, `favicon.ico`** — Site icons (cream mark on a solid black tile so it reads in Google results)
 
 The current file is your uploaded logo. If you want a higher-res version or different format, just replace it with the same filename.
 

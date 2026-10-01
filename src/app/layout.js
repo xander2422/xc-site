@@ -1,14 +1,10 @@
+import { GeistSans } from 'geist/font/sans';
 import './globals.css';
 
 export const metadata = {
   metadataBase: new URL('https://xandercayetano.com'),
   title: 'Xander Cayetano | Entrepreneur, Growth Strategist, Builder',
   description: 'Marketing systems that drive real revenue. Built from scratch, proven across 10+ industries. Founder of Revvoo.',
-  icons: {
-    icon: [{ url: '/logo-black.png', type: 'image/png' }],
-    apple: '/logo-black.png',
-    shortcut: '/logo-black.png',
-  },
   alternates: {
     canonical: '/',
   },
@@ -31,9 +27,13 @@ export const metadata = {
   },
 };
 
+export const viewport = {
+  themeColor: '#F5F2EA',
+};
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={GeistSans.variable}>
       <head>
         <script
           type="application/ld+json"
